@@ -1,12 +1,9 @@
-#pragma once
-
-#include <cstdio>
-#include <cstring>
+// #pragma once
 
 /**
  * Type of pokemons
  */
-typedef enum { POKEMON, SQUIRTLE, PIKACHU, CHARMANDER, BULBASAUR } Type;
+typedef enum { POKEMON, SQUIRTLE, PIKACHU, CHARMANDER } Type;
 
 /**
  * Pokemon type.
@@ -37,8 +34,3 @@ void TakeDamge(Pokemon* p, int dmg);
  * Attacks other pokemon
  */
 void Attack(Pokemon* p, Pokemon* other);
-
-/**
- * Pikachu thunderbolt attack.
- */
-void Thunderbolt(Pokemon* p, Pokemon* other);

@@ -10,6 +10,10 @@ Pokemon Create(Type t, const char* name) {
     if (t == SQUIRTLE) {
         p.atk = 3;
     }
+    if (t == BULBASAUR) {
+        p.atk = 3;
+        p.hp = 30;
+    }
 
     return p;
 }
@@ -24,6 +28,10 @@ void Rest(Pokemon* p) {
 void TakeDamge(Pokemon* p, int dmg) {
     p->hp = p->hp - dmg;
     printf("%s HP is reduced to %d (-%d).\n", p->name, p->hp, dmg);
+    if (p->t == BULBASAUR) {
+        p->hp = p->hp - dmg + 1;
+        printf("%s HP is reduced to %d (-%d).\n", p->name, p->hp, dmg);
+    }
 }
 
 void Attack(Pokemon* p, Pokemon* other) {
@@ -41,5 +49,11 @@ void Attack(Pokemon* p, Pokemon* other) {
 void Thunderbolt(Pokemon* p, Pokemon* other) {
     printf("%s used 10,000,000 volt thunderbolt!\n", p->name);
     TakeDamge(other, 10);
+    printf("\n");
+}
+
+void VineWhip(Pokemon* p, Pokemon* other) {
+    printf("%s used vine whip!\n", p->name);
+    TakeDamge(other, 5);
     printf("\n");
 }
